@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Print</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+</head>
+<body>
+    <div class="container">
+        <form>
+            <div>
+                <label>输入批次</label>
+                <input type="text" id="batch" name="batch" style="width: 50px" autofocus>
+            </div>
+            <button type="submit">Print</button>
+        </form>
+    </div>
+    <script>
+        const electron = require('electron');
+        const {ipcRenderer} = electron;
+        document.querySelector('form').addEventListener('submit', submitForm);
+
+        function submitForm(e) {
+            e.preventDefault();
+            const batch = document.querySelector('#batch').value;
+            ipcRenderer.send('item:print', {"batch": batch});
+        }
+    </script>
+</body>
+
+</html>

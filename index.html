@@ -1,0 +1,30 @@
+<html>
+  <head>
+    <title>Hello World</title>
+    <link rel="stylesheet" href="./css/style.css">
+    </style>
+      <link href='https://fonts.googleapis.com/css?family=Roboto:300' rel='stylesheet' type='text/css' />
+    <script>
+        const electron = require('electron');
+        const {ipcRenderer} = electron;
+      function mnemonicModel () {
+        alert('在助记词模式下，你可以打印收款地址，处理付款交易，请保护好你的助记词');
+        ipcRenderer.send('mnemonicModel');
+
+      }
+      function xpubModel () {
+        alert('在xpub模式下，你仅可以打印收款地址，查询余额');
+        ipcRenderer.send('xpubModel');
+      }
+      function trezorModel () {
+        alert('请连接你的trezor钱包');
+        ipcRenderer.send('trezorModel');
+      }
+    </script>
+  </head>
+  <body style="text-align: center">
+    <button onclick="mnemonicModel()">助记词模式</button>
+    <button onclick="xpubModel()">xpub模式</button>
+    <button onclick="trezorModel()">trezor模式</button>
+  </body>
+</html>

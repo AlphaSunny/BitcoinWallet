@@ -1,0 +1,23 @@
+{
+  "name": "btc-ba",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bchaddrjs": "^0.2.1",
+    "bip32": "^0.1.0",
+    "bip39": "^2.5.0",
+    "bitcoinjs-lib": "^3.3.2",
+    "bitcore-explorers": "^1.0.1",
+    "electron": "^2.0.5",
+    "electron-input-menu": "^2.1.0",
+    "express": "^4.16.3",
+    "fast-csv": "^2.4.1",
+    "request": "^2.87.0"
+  }
+}

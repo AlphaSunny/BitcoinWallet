@@ -1,0 +1,27 @@
+# Hivebanks btc ba (testnet version)
+# author: pool
+# time: 2018-07-09
+
+# 钱包seed
+助记词： "praise you muffin lion enable neck grocery crumble super myself license ghost"
+xpub: tpubDDQk4rFQdee83hndqmtK8dRHEtLP5W4fBWtUojpnzmnjxqpaVfiYDFyNYpp9vRBhMCsMYBKv6bt3PTmcQC7j6QFg7JbWDRjir8sTFs7iMst
+
+# BA使用钱包的地址
+1,1,0,n2qGdjfjmFyvAXqbErrtXpfypXhtbNWruM,"m/44'/1'/0'/0/0"
+1,1,1,mfXyKec434Db9UT2uxnzhmQLPian6H32xu,"m/44'/1'/0'/0/1"
+1,1,2,mjvZc3rHDbJ4RfgczVpPVnW7ZN75Ncxxrr,"m/44'/1'/0'/0/2"
+1,1,3,mtfVNoUuGSJD8xivY7GtPp8a6TTTnrzWcy,"m/44'/1'/0'/0/3"
+1,1,4,mx4n8wEUM99kZVDGxxFUo9efSX9bdTv6F6,"m/44'/1'/0'/0/4"
+1,1,5,myiuurijFD9DvauJpkYzoDdvNtS287EMds,"m/44'/1'/0'/0/5"
+1,1,6,n25xNhGLGWaj1q5T3Bmyd6mPJzS91hBAQj,"m/44'/1'/0'/0/6"
+1,1,7,n3V3yKkL8RjuRLiqxmLAirUXFNbp7PY2R8,"m/44'/1'/0'/0/7"
+1,1,8,n3pydo9jnoi5LUMxNfxbDbrrXwtcV9vc3h,"m/44'/1'/0'/0/8"
+1,1,9,mxGb6QdUinf9s8kcABd1RbDswsM2Q3M2Q1,"m/44'/1'/0'/0/9"
+
+# 测试用私钥和对应地址
+address: n4YYE58SDz9Ynkun8dYWb4NuDSgQnF78Mh
+private key: cQrBoEM8gbNQLRHNDg6HRyA4kCVjSDprdpRQPKHTR7UQe4CmjVFw
+
+
+# 钱包seed
+助记词： "enemy whip share life bronze damp wall topic pig bean around blue"
