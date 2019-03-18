@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script type="text/javascript" src="../js/qrcode.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <title>Receive</title>
+    <style></style>
+</head>
+<body>
+    <div id="address"></div>
+    <div id="qrcode"></div>
+    <script>
+        const electron = require('electron');
+        const {ipcRenderer} = electron;
+        ipcRenderer.send("action:return-address");
+        ipcRenderer.on('item:address', function(e, item){
+            document.getElementById("address").innerHTML = item;
+            var qrcode = new QRCode(document.getElementById('qrcode'), {
+                text:item,
+                height: 256,
+                width: 256,
+                correctLevel: QRCode.CorrectLevel.H
+            });
+        })
+    </script>
+</body>
+</html>

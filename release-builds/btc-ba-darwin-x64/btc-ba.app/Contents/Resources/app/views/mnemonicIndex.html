@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hivebanks Ba Wallet</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <script type="text/javascript" src="../js/qrcode.min.js"></script>
+</head>
+<body>
+    <nav>
+        <div class="nav-wrapper">
+            <a class="brand-logo center">Bitcoin testnet wallet</a>   
+        </div>
+    </nav>
+    <div style="position:  relative; left: 48%;">
+        <div id="balance" style="float: left; left: 49%; color: blue; font-size: 50px">0</div><div style="float: left; font-size: 30px">btc</div><br/><br/>
+    </div>
+    <br/>
+    <div style="position:  relative; left: 48%; top: 10%">
+        <div id="dollar" style="float: left; left: 49%; color:gold;">0</div><div style="float: left;">dollar</div><br>
+    </div>
+    
+    <div style="position: relative; top: 240px; left: 240px;">
+        <button id="receive" onclick="generateReceive()" style="float: left;">receive</button>
+        <button id="send" onclick="generateSend()" style="float: left; left: 15px;">send</button>
+        <button id="batch_process" style="float: left; left: 30px;">批量处理</button>
+    </div>
+    <script>
+        const electron = require('electron');
+        const {ipcRenderer} = electron;
+        
+        //得到ipc消息，用户的余额，来自于用户输入助记词之后
+        ipcRenderer.on('item:balance', function(e, item) {
+            var btc = item/100000000;
+            document.getElementById("balance").innerHTML=btc;
+            console.log(item);
+        }) 
+
+        
+        function generateSend() {
+            ipcRenderer.send("action:send");
+        }
+
+
+        function generateReceive() {
+            ipcRenderer.send("action:receive");
+        }
+
+        // catch the alert
+        ipcRenderer.on('alert:noMnemonic', function(e) {
+            alert("Please input the mnemonic first");
+        })
+               
+    </script>
+</body>
+</html>
